@@ -1,0 +1,71 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Plan {
+  id                  String   @id @default(cuid())
+  nombre              String
+  precio              Float
+  duracionMeses       Int
+  descripcion         String
+  caracteristicas     String   // JSON string - Array de strings
+  destacado           Boolean  @default(false)
+  activo              Boolean  @default(true)
+  terminosCondiciones String?
+  orden               Int      @default(0)
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+}
+
+model Transformacion {
+  id                   String   @id @default(cuid())
+  nombreCliente        String
+  edad                 Int?
+  imagenAntes          String
+  imagenDespues        String
+  categoria            String   // "perdida_peso", "ganancia_muscular", "recomposicion"
+  tiempoTransformacion String   // "3 meses", "6 meses", etc.
+  testimonial          String
+  visible              Boolean  @default(true)
+  orden                Int      @default(0)
+  createdAt            DateTime @default(now())
+  updatedAt            DateTime @updatedAt
+}
+
+model Contacto {
+  id        String   @id @default(cuid())
+  nombre    String
+  email     String
+  telefono  String
+  pais      String?
+  ciudad    String?
+  objetivo  String   // "perdida_peso", "ganancia_muscular", "recomposicion", "rendimiento"
+  mensaje   String
+  leido     Boolean  @default(false)
+  createdAt DateTime @default(now())
+}
+
+model Usuario {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String   // Hasheado con bcrypt
+  nombre    String
+  role      String   @default("admin")
+  createdAt DateTime @default(now())
+}
+
+model ConfiguracionSitio {
+  id          String   @id @default(cuid())
+  clave       String   @unique
+  valor       String
+  descripcion String?
+  updatedAt   DateTime @updatedAt
+}

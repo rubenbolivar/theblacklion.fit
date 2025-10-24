@@ -1,0 +1,222 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  body {
+    @apply bg-lion-black text-lion-white font-body;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Botón principal dorado */
+  .btn-gold {
+    @apply bg-gradient-to-r from-lion-black to-lion-gold text-lion-black font-bold py-3 px-8 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-gold-lg hover:text-lion-white;
+  }
+
+  /* Botón secundario */
+  .btn-outline-gold {
+    @apply border-2 border-lion-gold text-lion-gold font-bold py-3 px-8 rounded-lg transition-all duration-300 hover:bg-lion-gold hover:text-lion-black hover:shadow-gold;
+  }
+
+  /* Sección con padding estándar */
+  .section-padding {
+    @apply py-16 md:py-24 px-4 md:px-8 lg:px-16;
+  }
+
+  /* Título de sección */
+  .section-title {
+    @apply text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-center mb-4 text-lion-gold;
+  }
+
+  /* Subtítulo de sección */
+  .section-subtitle {
+    @apply text-lg md:text-xl text-center text-gray-300 mb-12 max-w-3xl mx-auto;
+  }
+
+  /* Card con efecto hover */
+  .card-hover {
+    @apply bg-lion-gray border border-gray-800 rounded-lg p-6 transition-all duration-300 hover:border-lion-gold hover:shadow-gold hover:scale-105;
+  }
+
+  /* Input de formulario */
+  .form-input {
+    @apply w-full bg-lion-gray border border-gray-700 text-lion-white rounded-lg px-4 py-3 focus:outline-none focus:border-lion-gold focus:ring-1 focus:ring-lion-gold transition-colors;
+  }
+
+  /* Textarea de formulario */
+  .form-textarea {
+    @apply w-full bg-lion-gray border border-gray-700 text-lion-white rounded-lg px-4 py-3 focus:outline-none focus:border-lion-gold focus:ring-1 focus:ring-lion-gold transition-colors resize-none;
+  }
+
+  /* Label de formulario */
+  .form-label {
+    @apply block text-lion-gold font-medium mb-2;
+  }
+
+  /* Divisor de sección */
+  .section-divider {
+    @apply w-full h-px bg-gradient-to-r from-transparent via-lion-gold to-transparent my-16;
+  }
+
+  /* Contenedor principal */
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 md:px-8;
+  }
+
+  /* Badge dorado */
+  .badge-gold {
+    @apply inline-block bg-lion-gold text-lion-black text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide;
+  }
+
+  /* Icono dorado */
+  .icon-gold {
+    @apply text-lion-gold;
+  }
+
+  /* Link con hover dorado */
+  .link-gold {
+    @apply text-gray-300 hover:text-lion-gold transition-colors duration-300;
+  }
+
+  /* Overlay oscuro */
+  .overlay-dark {
+    @apply absolute inset-0 bg-black bg-opacity-60;
+  }
+
+  /* Gradiente de texto dorado */
+  .text-gradient-gold {
+    @apply bg-gradient-to-r from-lion-gold to-yellow-500 bg-clip-text text-transparent;
+  }
+}
+
+@layer utilities {
+  /* Animación de aparición */
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-in-out;
+  }
+
+  /* Animación de deslizamiento hacia arriba */
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out;
+  }
+
+  /* Animación de brillo */
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite;
+  }
+
+  /* Ocultar scrollbar pero mantener funcionalidad */
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Estilos para el slider de comparación */
+.react-compare-slider-handle {
+  @apply border-4 border-lion-gold;
+}
+
+.react-compare-slider-handle-line {
+  @apply bg-lion-gold;
+}
+
+/* Estilos para la galería de fotos */
+.PhotoView-Slider__BannerWrap {
+  @apply bg-lion-black;
+}
+
+/* Estilos para el menú móvil */
+.mobile-menu {
+  @apply fixed inset-0 bg-lion-black z-50 transform transition-transform duration-300;
+}
+
+.mobile-menu.open {
+  @apply translate-x-0;
+}
+
+.mobile-menu.closed {
+  @apply translate-x-full;
+}
+
+/* Estilos para loading spinner */
+.spinner {
+  border: 3px solid rgba(212, 175, 55, 0.1);
+  border-top-color: #D4AF37;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Estilos para el navbar sticky */
+.navbar-sticky {
+  @apply fixed top-0 left-0 right-0 z-40 transition-colors duration-300;
+  transform: translateZ(0);
+  will-change: background-color;
+}
+
+.navbar-sticky.scrolled {
+  @apply bg-lion-black bg-opacity-95 backdrop-blur-sm shadow-lg;
+}
+
+/* Estilos para tooltips */
+.tooltip {
+  @apply absolute bg-lion-gold text-lion-black text-xs font-medium px-3 py-1 rounded-lg opacity-0 pointer-events-none transition-opacity duration-300;
+}
+
+.tooltip.show {
+  @apply opacity-100;
+}
+
+/* Estilos para modales */
+.modal-overlay {
+  @apply fixed inset-0 bg-black bg-opacity-75 z-50 flex items-center justify-center p-4;
+}
+
+.modal-content {
+  @apply bg-lion-gray border border-lion-gold rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto;
+}
+
+/* Estilos para tablas admin */
+.admin-table {
+  @apply w-full border-collapse;
+}
+
+.admin-table th {
+  @apply bg-lion-gray text-lion-gold font-bold text-left p-4 border-b border-gray-700;
+}
+
+.admin-table td {
+  @apply p-4 border-b border-gray-800;
+}
+
+.admin-table tr:hover {
+  @apply bg-lion-gray bg-opacity-50;
+}
+
+/* Estilos para el hero video */
+.hero-video {
+  @apply absolute inset-0 w-full h-full object-cover;
+}
+
+.hero-overlay {
+  @apply absolute inset-0 bg-gradient-to-b from-black via-black/70 to-black;
+}
