@@ -1,381 +1,196 @@
 # 🦁 Black Lion Empire
 
-**Transformación física y mental 100% online**
+> Transformación Física y Mental - Entrena como un león, Vive como un rey
 
-Sitio web oficial de Black Lion Empire, programa de entrenamiento y nutrición personalizado creado por Luis Rondón.
+[![Next.js](https://img.shields.io/badge/Next.js-14.2-black?logo=next.js)](https://nextjs.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-38bdf8?logo=tailwind-css)](https://tailwindcss.com/)
+[![Prisma](https://img.shields.io/badge/Prisma-5.22-2D3748?logo=prisma)](https://www.prisma.io/)
+[![Deployed](https://img.shields.io/badge/deployed-theblacklion.fit-gold)](https://theblacklion.fit)
 
----
+Plataforma web profesional para coaching de fitness y nutrición 100% online. Sistema completo de gestión de clientes, planes personalizados y seguimiento de transformaciones.
 
-## 📋 Tabla de Contenidos
+## 🌐 Demo
 
-- [Descripción](#descripción)
-- [Características](#características)
-- [Stack Tecnológico](#stack-tecnológico)
-- [Requisitos Previos](#requisitos-previos)
-- [Instalación](#instalación)
-- [Configuración](#configuración)
-- [Comandos Disponibles](#comandos-disponibles)
-- [Estructura del Proyecto](#estructura-del-proyecto)
-- [Deployment](#deployment)
-- [Mantenimiento](#mantenimiento)
-
----
-
-## 🎯 Descripción
-
-Black Lion Empire es una plataforma web SPA (Single Page Application) diseñada para ofrecer programas de entrenamiento y nutrición personalizados 100% online. El sitio incluye:
-
-- Landing page con información del programa
-- Sistema de contacto integrado
-- Panel administrativo completo
-- Gestión de planes y precios
-- Galería de transformaciones
-- Sistema de autenticación seguro
-
----
+**Sitio Web:** [https://theblacklion.fit](https://theblacklion.fit)  
+**Panel Admin:** [https://theblacklion.fit/admin](https://theblacklion.fit/admin)
 
 ## ✨ Características
 
 ### Frontend
-- ✅ Diseño responsive y moderno
-- ✅ Animaciones fluidas con Framer Motion
-- ✅ Tema personalizado Black Lion Empire
-- ✅ Navegación smooth scroll
-- ✅ Formulario de contacto con validación
-- ✅ Optimización SEO completa
+- ✅ **Diseño Responsive** - Optimizado para móvil, tablet y desktop
+- ✅ **Hero Dinámico** - Con partículas animadas y efectos visuales
+- ✅ **Comparador Antes/Después** - Slider interactivo para transformaciones
+- ✅ **Formulario de Contacto** - Integración directa con WhatsApp
+- ✅ **SEO Optimizado** - Meta tags Open Graph para redes sociales
+- ✅ **Animaciones Suaves** - Powered by Framer Motion
+- ✅ **Navbar Inteligente** - Logo oculto en móvil para mejor UX
 
 ### Backend
-- ✅ API REST con Next.js 14
-- ✅ Base de datos PostgreSQL con Prisma ORM
-- ✅ Autenticación con NextAuth.js
-- ✅ Gestión de imágenes con Cloudinary
-- ✅ Panel administrativo protegido
+- ✅ **API REST** - Endpoints para planes, transformaciones y contactos
+- ✅ **Autenticación Segura** - NextAuth con credenciales
+- ✅ **Base de Datos** - SQLite con Prisma ORM
+- ✅ **Admin Dashboard** - Panel completo de gestión
+- ✅ **CRUD Completo** - Planes, transformaciones y mensajes
 
----
+### Deployment
+- ✅ **VPS Deployment** - Configurado con PM2 y Nginx
+- ✅ **SSL/HTTPS** - Certificado válido con Let's Encrypt
+- ✅ **Zero Downtime** - Hot reload con PM2
+- ✅ **Logs Management** - Sistema de logging centralizado
 
-## 🛠 Stack Tecnológico
+## 🚀 Tech Stack
 
-- **Framework**: Next.js 14 (App Router)
-- **Lenguaje**: JavaScript (ES6+)
-- **Estilos**: Tailwind CSS
-- **Animaciones**: Framer Motion
-- **Base de Datos**: PostgreSQL
-- **ORM**: Prisma
-- **Autenticación**: NextAuth.js
-- **Formularios**: React Hook Form
-- **Validación**: Zod
-- **Imágenes**: Cloudinary
-- **Iconos**: Lucide React
-- **Process Manager**: PM2
+- **Framework:** Next.js 14.2 (App Router)
+- **Styling:** Tailwind CSS 3.4
+- **Database:** SQLite + Prisma 5.22
+- **Authentication:** NextAuth.js
+- **Animations:** Framer Motion
+- **Forms:** React Hook Form
+- **Process Manager:** PM2
+- **Web Server:** Nginx
+- **Deployment:** VPS (Ubuntu)
 
----
+## 📦 Instalación Local
 
-## 📦 Requisitos Previos
+\`\`\`bash
+# Clonar el repositorio
+git clone https://github.com/rubenbolivar/theblacklion.fit.git
+cd theblacklion.fit
 
-Antes de comenzar, asegúrate de tener instalado:
-
-- **Node.js** 18.x o superior
-- **npm** o **yarn**
-- **PostgreSQL** 14.x o superior
-- **Git**
-
----
-
-## 🚀 Instalación
-
-### 1. Clonar el repositorio
-
-```bash
-git clone <repository-url>
-cd THEBLACKLION.FIT
-```
-
-### 2. Instalar dependencias
-
-```bash
+# Instalar dependencias
 npm install
-```
 
-### 3. Configurar variables de entorno
-
-Copia el archivo `.env.example` a `.env`:
-
-```bash
+# Configurar variables de entorno
 cp .env.example .env
-```
+# Editar .env con tus credenciales
 
-Edita el archivo `.env` con tus credenciales:
+# Generar Prisma Client
+npx prisma generate
 
-```env
-# Database
-DATABASE_URL="postgresql://user:password@localhost:5432/black_lion_empire"
-
-# NextAuth
-NEXTAUTH_SECRET="tu-secret-key-aqui"
-NEXTAUTH_URL="http://localhost:3000"
-
-# Admin Credentials
-ADMIN_EMAIL="admin@blacklionempire.com"
-ADMIN_PASSWORD="tu-password-seguro"
-
-# Cloudinary
-CLOUDINARY_CLOUD_NAME="tu-cloud-name"
-CLOUDINARY_API_KEY="tu-api-key"
-CLOUDINARY_API_SECRET="tu-api-secret"
-
-# WhatsApp
-WHATSAPP_NUMBER="+1234567890"
-
-# Site
-SITE_NAME="Black Lion Empire"
-SITE_URL="http://localhost:3000"
-```
-
-### 4. Configurar la base de datos
-
-```bash
-# Generar el cliente de Prisma
-npm run prisma:generate
-
-# Crear las tablas en la base de datos
+# Crear y poblar la base de datos
 npx prisma db push
-
-# Poblar la base de datos con datos iniciales
 npm run prisma:seed
-```
 
-### 5. Iniciar el servidor de desarrollo
+# Agregar transformaciones (opcional)
+node scripts/add-transformaciones.js
 
-```bash
+# Iniciar en desarrollo
 npm run dev
-```
+\`\`\`
 
-El sitio estará disponible en `http://localhost:3000`
+Visita [http://localhost:3000](http://localhost:3000)
 
----
+## 🗂️ Estructura del Proyecto
 
-## ⚙️ Configuración
+\`\`\`
+theblacklion.fit/
+├── app/                      # Next.js App Router
+│   ├── admin/               # Panel de administración
+│   ├── api/                 # API Routes
+│   ├── globals.css          # Estilos globales
+│   └── layout.js            # Layout principal
+├── components/              # Componentes React
+│   ├── admin/              # Componentes del admin
+│   ├── Navbar.js           # Barra de navegación
+│   ├── Hero.js             # Sección hero
+│   ├── Planes.js           # Tarjetas de planes
+│   └── Transformaciones.js # Galería de transformaciones
+├── lib/                    # Utilidades
+│   ├── prisma.js          # Cliente de Prisma
+│   └── cloudinary.js      # Integración Cloudinary
+├── prisma/                # Base de datos
+│   ├── schema.prisma      # Esquema de la BD
+│   └── seed.js            # Datos iniciales
+├── public/                # Archivos estáticos
+│   ├── logo.png          # Logo principal
+│   ├── og-image.png      # Imagen Open Graph
+│   └── transformaciones/ # Imágenes de transformaciones
+├── scripts/              # Scripts de utilidad
+│   ├── add-transformaciones.js
+│   └── generate-og-image.js
+└── ecosystem.config.js   # Configuración PM2
+\`\`\`
 
-### Base de Datos
+## 🔑 Credenciales de Admin
 
-El proyecto usa PostgreSQL. Asegúrate de tener una base de datos creada:
+**URL:** https://theblacklion.fit/admin
 
-```sql
-CREATE DATABASE black_lion_empire;
-```
+\`\`\`
+Email: admin@blacklionempire.com
+Password: BlackLion2025!Secure
+\`\`\`
 
-### Cloudinary
+> ⚠️ Cambia estas credenciales en producción
 
-1. Crea una cuenta en [Cloudinary](https://cloudinary.com/)
-2. Obtén tus credenciales del dashboard
-3. Agrégalas al archivo `.env`
+## 🚀 Deployment
 
-### Usuario Admin
+### Producción (VPS)
 
-El usuario administrador se crea automáticamente al ejecutar el seed. Las credenciales son las que configuraste en `.env`:
+\`\`\`bash
+# En el servidor
+cd /var/www/theblacklion.fit
 
-- **Email**: El valor de `ADMIN_EMAIL`
-- **Password**: El valor de `ADMIN_PASSWORD`
+# Instalar dependencias
+npm install
 
-Para acceder al panel admin: `http://localhost:3000/admin`
+# Configurar .env de producción
+nano .env
 
----
-
-## 📝 Comandos Disponibles
-
-```bash
-# Desarrollo
-npm run dev              # Inicia el servidor de desarrollo
-
-# Producción
-npm run build            # Construye la aplicación para producción
-npm start                # Inicia el servidor de producción
-npm run start:prod       # Inicia con PM2
-
-# Prisma
-npm run prisma:generate  # Genera el cliente de Prisma
-npm run prisma:migrate   # Ejecuta las migraciones
-npm run prisma:studio    # Abre Prisma Studio (GUI)
-npm run prisma:seed      # Puebla la base de datos
-
-# Linting
-npm run lint             # Ejecuta ESLint
-```
-
----
-
-## 📁 Estructura del Proyecto
-
-```
-black-lion-empire/
-├── app/
-│   ├── api/                    # API Routes
-│   │   ├── auth/              # Autenticación
-│   │   ├── planes/            # Gestión de planes
-│   │   ├── transformaciones/  # Gestión de transformaciones
-│   │   └── contacto/          # Gestión de contactos
-│   ├── admin/                 # Panel administrativo
-│   ├── globals.css            # Estilos globales
-│   ├── layout.js              # Layout principal
-│   └── page.js                # Página principal
-├── components/                # Componentes React
-│   ├── Navbar.js
-│   ├── Hero.js
-│   ├── QuienesSomos.js
-│   ├── Servicios.js
-│   ├── Planes.js
-│   ├── Transformaciones.js
-│   ├── Galeria.js
-│   ├── Contacto.js
-│   └── Footer.js
-├── lib/                       # Utilidades
-│   ├── prisma.js             # Cliente de Prisma
-│   └── cloudinary.js         # Configuración de Cloudinary
-├── prisma/
-│   ├── schema.prisma         # Esquema de base de datos
-│   └── seed.js               # Datos iniciales
-├── public/                    # Archivos estáticos
-├── .env.example              # Ejemplo de variables de entorno
-├── ecosystem.config.js       # Configuración de PM2
-├── middleware.js             # Middleware de Next.js
-├── next.config.js            # Configuración de Next.js
-├── tailwind.config.js        # Configuración de Tailwind
-└── package.json              # Dependencias del proyecto
-```
-
----
-
-## 🚢 Deployment
-
-### Preparación
-
-1. **Construir la aplicación**:
-```bash
+# Construir
 npm run build
-```
 
-2. **Configurar variables de entorno en producción**:
-   - Actualiza `NEXTAUTH_URL` con tu dominio
-   - Actualiza `SITE_URL` con tu dominio
-   - Asegúrate de tener un `NEXTAUTH_SECRET` seguro
-
-### Deployment con PM2
-
-1. **Instalar PM2 globalmente**:
-```bash
-npm install -g pm2
-```
-
-2. **Iniciar la aplicación**:
-```bash
+# Iniciar con PM2
 npm run start:prod
-```
 
-3. **Comandos útiles de PM2**:
-```bash
-pm2 list                 # Ver aplicaciones corriendo
-pm2 logs black-lion-empire  # Ver logs
-pm2 restart black-lion-empire  # Reiniciar
-pm2 stop black-lion-empire     # Detener
-pm2 delete black-lion-empire   # Eliminar
-```
+# Guardar configuración PM2
+pm2 save
+\`\`\`
 
-### Configuración de Nginx (Opcional)
+Ver [DEPLOYMENT.md](DEPLOYMENT.md) para instrucciones completas.
 
-Ejemplo de configuración para Nginx:
+## 📱 Integración WhatsApp
 
-```nginx
-server {
-    listen 80;
-    server_name tudominio.com;
+El formulario de contacto envía los datos directamente a WhatsApp:
 
-    location / {
-        proxy_pass http://localhost:3000;
-        proxy_http_version 1.1;
-        proxy_set_header Upgrade $http_upgrade;
-        proxy_set_header Connection 'upgrade';
-        proxy_set_header Host $host;
-        proxy_cache_bypass $http_upgrade;
-    }
-}
-```
+- **Número:** +1 (321) 314-4332
+- **Formato:** Mensaje pre-formateado con toda la información del cliente
+- **Backup:** Los datos también se guardan en la base de datos
 
-### SSL con Let's Encrypt
+## 🎨 Diseño
 
-```bash
-sudo certbot --nginx -d tudominio.com
-```
+**Paleta de Colores:**
+- Negro: \`#0D0D0D\` (lion-black)
+- Dorado: \`#D4AF37\` (lion-gold)
+- Gris: \`#1A1A1A\` (lion-gray)
+- Rojo: \`#DC2626\` (lion-red)
 
----
+**Tipografía:**
+- Headings: Montserrat (700-900)
+- Body: Inter (300-600)
 
-## 🔧 Mantenimiento
+## 📄 Scripts Disponibles
 
-### Backup de Base de Datos
+\`\`\`bash
+npm run dev          # Desarrollo
+npm run build        # Construir para producción
+npm start            # Iniciar producción
+npm run start:prod   # Iniciar con PM2
+npm run prisma:seed  # Poblar base de datos
+\`\`\`
 
-```bash
-# Crear backup
-pg_dump -U usuario black_lion_empire > backup.sql
+## 🤝 Contribuir
 
-# Restaurar backup
-psql -U usuario black_lion_empire < backup.sql
-```
+Este es un proyecto privado. Para colaborar, contacta al propietario del repositorio.
 
-### Actualizar Dependencias
-
-```bash
-npm update
-npm audit fix
-```
-
-### Logs
-
-Los logs de PM2 se guardan en:
-- Error logs: `./logs/err.log`
-- Output logs: `./logs/out.log`
-- Combined logs: `./logs/combined.log`
-
----
-
-## 🎨 Personalización
-
-### Colores del Tema
-
-Los colores se definen en `tailwind.config.js`:
-
-```javascript
-colors: {
-  'lion-black': '#0A0A0A',
-  'lion-gold': '#D4AF37',
-  'lion-red': '#C41E3A',
-  'lion-white': '#FFFFFF',
-  'lion-gray': '#1A1A1A',
-}
-```
-
-### Fuentes
-
-Las fuentes se cargan en `app/layout.js`:
-- **Heading**: Montserrat
-- **Body**: Inter
-
----
-
-## 📞 Soporte
-
-Para soporte técnico o consultas:
-- **Email**: info@blacklionempire.com
-- **WhatsApp**: Configurado en variables de entorno
-
----
-
-## 📄 Licencia
+## 📝 License
 
 © 2025 Black Lion Empire. Todos los derechos reservados.
 
-Creado por **Luis Rondón** - Entrenador Personal & Nutricionista
+## 👨‍💻 Desarrollado Por
+
+**[The Three Way](https://thetreeway.com)**  
+Soluciones digitales profesionales
 
 ---
 
-## 🦁 Lema
-
-**"Entrena como un león, Vive como un rey"**
+�� **Entrena como un león, Vive como un rey**
