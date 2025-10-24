@@ -8,11 +8,18 @@ const inter = Inter({
   display: 'swap',
 });
 
-const montserrat = Montserrat({ 
+const montserrat = Montserrat({
   subsets: ['latin'],
   variable: '--font-montserrat',
   display: 'swap',
 });
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+};
 
 export const metadata = {
   title: 'Black Lion Empire | Transformación Física y Mental Online',
