@@ -30,7 +30,7 @@ export function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }) {
-  const { locale } = params;
+  const { locale } = await params;
 
   const titles = {
     es: 'Black Lion Empire | Transformación Física y Mental Online',
@@ -115,7 +115,8 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function LocaleLayout({ children, params }) {
-  const { locale } = params;
+  // Await params for Next.js 15 compatibility
+  const { locale } = await params;
 
   // Validar que el locale es válido
   if (!locales.includes(locale)) {
