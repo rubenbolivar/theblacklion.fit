@@ -1,26 +1,32 @@
-// Middleware deshabilitado temporalmente
-// Para habilitar protección de rutas admin, descomentar el código siguiente
-// y crear la página de login en app/admin/login/page.js
+import createIntlMiddleware from 'next-intl/middleware';
+import { NextResponse } from 'next/server';
+import { locales, defaultLocale } from './i18n';
 
-/*
-import { withAuth } from 'next-auth/middleware';
-
-export default withAuth({
-  pages: {
-    signIn: '/admin/login',
-  },
+// Crear middleware de next-intl
+const intlMiddleware = createIntlMiddleware({
+  locales,
+  defaultLocale,
+  localePrefix: 'as-needed',
+  localeDetection: true
 });
 
-export const config = {
-  matcher: ['/admin/:path*']
-};
-*/
+export default function middleware(request) {
+  const { pathname } = request.nextUrl;
 
-export function middleware() {
-  // Sin protección por ahora
-  return null;
+  // Rutas admin no necesitan i18n (siempre en español)
+  if (pathname.startsWith('/admin') || pathname.startsWith('/api')) {
+    return NextResponse.next();
+  }
+
+  // Aplicar middleware de i18n para el resto de rutas
+  return intlMiddleware(request);
 }
 
 export const config = {
-  matcher: []
+  // Matcher para todas las rutas públicas excepto archivos estáticos
+  matcher: [
+    '/((?!api|_next/static|_next/image|favicon.ico|logo.png|og-image.png|.*\\..*|admin).*)',
+    '/',
+    '/(es|en|pt)/:path*'
+  ]
 };

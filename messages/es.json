@@ -1,0 +1,128 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Quiénes Somos",
+    "services": "Servicios",
+    "plans": "Planes",
+    "transformations": "Transformaciones",
+    "gallery": "Galería",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "title": "Transformación Física y Mental",
+    "tagline": "Entrena como un león, Vive como un rey",
+    "description": "Transformación física y mental 100% online desde cualquier lugar del mundo",
+    "ctaStart": "Comienza Tu Transformación",
+    "ctaMeet": "Conoce a Luis Rondón",
+    "ctaStartNow": "Comienza Ahora",
+    "stats": {
+      "transformations": "Transformaciones",
+      "countries": "Países",
+      "online": "Online"
+    }
+  },
+  "about": {
+    "title": "Quiénes Somos",
+    "subtitle": "Tu Coach de Transformación",
+    "name": "Luis Rondón",
+    "description": "Coach certificado con más de 10 años de experiencia en transformación física y mental. Especializado en coaching online para personas de todo el mundo.",
+    "experience": "Años de Experiencia",
+    "clients": "Clientes Satisfechos",
+    "success": "Tasa de Éxito"
+  },
+  "services": {
+    "title": "Nuestros Servicios",
+    "subtitle": "Todo lo que necesitas para tu transformación",
+    "items": {
+      "nutrition": {
+        "title": "Plan Nutricional Personalizado",
+        "description": "Planes de alimentación adaptados a tus objetivos, metabolismo y preferencias alimentarias"
+      },
+      "training": {
+        "title": "Rutinas de Entrenamiento",
+        "description": "Programas de ejercicio diseñados específicamente para ti, que puedes hacer en casa o gimnasio"
+      },
+      "support": {
+        "title": "Soporte 24/7",
+        "description": "Seguimiento constante y ajustes personalizados para garantizar tu progreso"
+      },
+      "community": {
+        "title": "Comunidad Exclusiva",
+        "description": "Acceso a grupo privado de apoyo con personas en tu mismo camino"
+      }
+    }
+  },
+  "plans": {
+    "title": "Planes de Transformación",
+    "subtitle": "Elige el plan perfecto para ti",
+    "month": "mes",
+    "months": "meses",
+    "featured": "Más Popular",
+    "select": "Seleccionar Plan",
+    "features": "Características",
+    "categories": {
+      "weight_loss": "Pérdida de Peso",
+      "muscle_gain": "Ganancia Muscular",
+      "recomposition": "Recomposición"
+    }
+  },
+  "transformations": {
+    "title": "Transformaciones Reales",
+    "subtitle": "Resultados que hablan por sí mismos",
+    "before": "Antes",
+    "after": "Después",
+    "time": "Tiempo",
+    "testimonial": "Testimonial",
+    "viewAll": "Ver Todas",
+    "categories": {
+      "all": "Todas",
+      "weight_loss": "Pérdida de Peso",
+      "muscle_gain": "Ganancia Muscular",
+      "recomposition": "Recomposición"
+    }
+  },
+  "contact": {
+    "title": "Comienza Tu Transformación",
+    "subtitle": "Completa el formulario y nos pondremos en contacto contigo",
+    "form": {
+      "name": "Nombre Completo",
+      "email": "Correo Electrónico",
+      "phone": "Teléfono (WhatsApp)",
+      "country": "País",
+      "city": "Ciudad",
+      "objective": "Objetivo Principal",
+      "message": "Cuéntanos más sobre tus objetivos",
+      "submit": "Enviar Mensaje",
+      "sending": "Enviando..."
+    },
+    "objectives": {
+      "weight_loss": "Pérdida de Peso",
+      "muscle_gain": "Ganancia Muscular",
+      "recomposition": "Recomposición Corporal",
+      "performance": "Rendimiento Deportivo"
+    },
+    "success": "¡Mensaje enviado! Te contactaremos pronto.",
+    "error": "Error al enviar el mensaje. Por favor intenta de nuevo."
+  },
+  "footer": {
+    "description": "Transformación física y mental 100% online desde cualquier lugar del mundo",
+    "quickLinks": "Enlaces Rápidos",
+    "legal": "Legal",
+    "privacy": "Política de Privacidad",
+    "terms": "Términos y Condiciones",
+    "rights": "Todos los derechos reservados",
+    "followUs": "Síguenos"
+  },
+  "common": {
+    "loading": "Cargando...",
+    "error": "Error",
+    "retry": "Reintentar",
+    "close": "Cerrar",
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "delete": "Eliminar",
+    "edit": "Editar",
+    "view": "Ver",
+    "back": "Volver"
+  }
+}

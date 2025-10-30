@@ -1,3 +1,5 @@
+const withNextIntl = require('next-intl/plugin')('./i18n.js');
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
@@ -11,9 +13,6 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
-  experimental: {
-    serverActions: true,
-  },
 }
 
-module.exports = nextConfig
+module.exports = withNextIntl(nextConfig)

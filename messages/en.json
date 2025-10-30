@@ -1,0 +1,128 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "services": "Services",
+    "plans": "Plans",
+    "transformations": "Transformations",
+    "gallery": "Gallery",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Physical and Mental Transformation",
+    "tagline": "Train like a lion, Live like a king",
+    "description": "100% online physical and mental transformation from anywhere in the world",
+    "ctaStart": "Start Your Transformation",
+    "ctaMeet": "Meet Luis Rondón",
+    "ctaStartNow": "Start Now",
+    "stats": {
+      "transformations": "Transformations",
+      "countries": "Countries",
+      "online": "Online"
+    }
+  },
+  "about": {
+    "title": "About Us",
+    "subtitle": "Your Transformation Coach",
+    "name": "Luis Rondón",
+    "description": "Certified coach with over 10 years of experience in physical and mental transformation. Specialized in online coaching for people worldwide.",
+    "experience": "Years of Experience",
+    "clients": "Satisfied Clients",
+    "success": "Success Rate"
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Everything you need for your transformation",
+    "items": {
+      "nutrition": {
+        "title": "Personalized Nutrition Plan",
+        "description": "Meal plans adapted to your goals, metabolism, and dietary preferences"
+      },
+      "training": {
+        "title": "Training Routines",
+        "description": "Exercise programs designed specifically for you, whether at home or gym"
+      },
+      "support": {
+        "title": "24/7 Support",
+        "description": "Constant monitoring and personalized adjustments to ensure your progress"
+      },
+      "community": {
+        "title": "Exclusive Community",
+        "description": "Access to private support group with people on the same journey"
+      }
+    }
+  },
+  "plans": {
+    "title": "Transformation Plans",
+    "subtitle": "Choose the perfect plan for you",
+    "month": "month",
+    "months": "months",
+    "featured": "Most Popular",
+    "select": "Select Plan",
+    "features": "Features",
+    "categories": {
+      "weight_loss": "Weight Loss",
+      "muscle_gain": "Muscle Gain",
+      "recomposition": "Recomposition"
+    }
+  },
+  "transformations": {
+    "title": "Real Transformations",
+    "subtitle": "Results that speak for themselves",
+    "before": "Before",
+    "after": "After",
+    "time": "Time",
+    "testimonial": "Testimonial",
+    "viewAll": "View All",
+    "categories": {
+      "all": "All",
+      "weight_loss": "Weight Loss",
+      "muscle_gain": "Muscle Gain",
+      "recomposition": "Recomposition"
+    }
+  },
+  "contact": {
+    "title": "Start Your Transformation",
+    "subtitle": "Fill out the form and we'll get in touch with you",
+    "form": {
+      "name": "Full Name",
+      "email": "Email Address",
+      "phone": "Phone (WhatsApp)",
+      "country": "Country",
+      "city": "City",
+      "objective": "Main Objective",
+      "message": "Tell us more about your goals",
+      "submit": "Send Message",
+      "sending": "Sending..."
+    },
+    "objectives": {
+      "weight_loss": "Weight Loss",
+      "muscle_gain": "Muscle Gain",
+      "recomposition": "Body Recomposition",
+      "performance": "Athletic Performance"
+    },
+    "success": "Message sent! We'll contact you soon.",
+    "error": "Error sending message. Please try again."
+  },
+  "footer": {
+    "description": "100% online physical and mental transformation from anywhere in the world",
+    "quickLinks": "Quick Links",
+    "legal": "Legal",
+    "privacy": "Privacy Policy",
+    "terms": "Terms and Conditions",
+    "rights": "All rights reserved",
+    "followUs": "Follow Us"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "retry": "Retry",
+    "close": "Close",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "view": "View",
+    "back": "Back"
+  }
+}

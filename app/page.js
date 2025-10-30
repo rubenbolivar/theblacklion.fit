@@ -1,23 +1,7 @@
-import Navbar from '@/components/Navbar';
-import Hero from '@/components/Hero';
-import QuienesSomos from '@/components/QuienesSomos';
-import Servicios from '@/components/Servicios';
-import Planes from '@/components/Planes';
-import Transformaciones from '@/components/Transformaciones';
-import Contacto from '@/components/Contacto';
-import Footer from '@/components/Footer';
+import { redirect } from 'next/navigation';
+import { defaultLocale } from '@/i18n';
 
-export default function Home() {
-  return (
-    <main className="min-h-screen">
-      <Navbar />
-      <Hero />
-      <QuienesSomos />
-      <Servicios />
-      <Planes />
-      <Transformaciones />
-      <Contacto />
-      <Footer />
-    </main>
-  );
+// Redirigir root a locale por defecto
+export default function RootPage() {
+  redirect(`/${defaultLocale}`);
 }

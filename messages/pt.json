@@ -1,0 +1,128 @@
+{
+  "nav": {
+    "home": "Início",
+    "about": "Quem Somos",
+    "services": "Serviços",
+    "plans": "Planos",
+    "transformations": "Transformações",
+    "gallery": "Galeria",
+    "contact": "Contato"
+  },
+  "hero": {
+    "title": "Transformação Física e Mental",
+    "tagline": "Treine como um leão, Viva como um rei",
+    "description": "Transformação física e mental 100% online de qualquer lugar do mundo",
+    "ctaStart": "Comece Sua Transformação",
+    "ctaMeet": "Conheça Luis Rondón",
+    "ctaStartNow": "Comece Agora",
+    "stats": {
+      "transformations": "Transformações",
+      "countries": "Países",
+      "online": "Online"
+    }
+  },
+  "about": {
+    "title": "Quem Somos",
+    "subtitle": "Seu Coach de Transformação",
+    "name": "Luis Rondón",
+    "description": "Coach certificado com mais de 10 anos de experiência em transformação física e mental. Especializado em coaching online para pessoas de todo o mundo.",
+    "experience": "Anos de Experiência",
+    "clients": "Clientes Satisfeitos",
+    "success": "Taxa de Sucesso"
+  },
+  "services": {
+    "title": "Nossos Serviços",
+    "subtitle": "Tudo o que você precisa para sua transformação",
+    "items": {
+      "nutrition": {
+        "title": "Plano Nutricional Personalizado",
+        "description": "Planos alimentares adaptados aos seus objetivos, metabolismo e preferências alimentares"
+      },
+      "training": {
+        "title": "Rotinas de Treinamento",
+        "description": "Programas de exercícios projetados especificamente para você, em casa ou na academia"
+      },
+      "support": {
+        "title": "Suporte 24/7",
+        "description": "Acompanhamento constante e ajustes personalizados para garantir seu progresso"
+      },
+      "community": {
+        "title": "Comunidade Exclusiva",
+        "description": "Acesso a grupo privado de apoio com pessoas na mesma jornada"
+      }
+    }
+  },
+  "plans": {
+    "title": "Planos de Transformação",
+    "subtitle": "Escolha o plano perfeito para você",
+    "month": "mês",
+    "months": "meses",
+    "featured": "Mais Popular",
+    "select": "Selecionar Plano",
+    "features": "Características",
+    "categories": {
+      "weight_loss": "Perda de Peso",
+      "muscle_gain": "Ganho Muscular",
+      "recomposition": "Recomposição"
+    }
+  },
+  "transformations": {
+    "title": "Transformações Reais",
+    "subtitle": "Resultados que falam por si",
+    "before": "Antes",
+    "after": "Depois",
+    "time": "Tempo",
+    "testimonial": "Depoimento",
+    "viewAll": "Ver Todas",
+    "categories": {
+      "all": "Todas",
+      "weight_loss": "Perda de Peso",
+      "muscle_gain": "Ganho Muscular",
+      "recomposition": "Recomposição"
+    }
+  },
+  "contact": {
+    "title": "Comece Sua Transformação",
+    "subtitle": "Preencha o formulário e entraremos em contato com você",
+    "form": {
+      "name": "Nome Completo",
+      "email": "E-mail",
+      "phone": "Telefone (WhatsApp)",
+      "country": "País",
+      "city": "Cidade",
+      "objective": "Objetivo Principal",
+      "message": "Conte-nos mais sobre seus objetivos",
+      "submit": "Enviar Mensagem",
+      "sending": "Enviando..."
+    },
+    "objectives": {
+      "weight_loss": "Perda de Peso",
+      "muscle_gain": "Ganho Muscular",
+      "recomposition": "Recomposição Corporal",
+      "performance": "Desempenho Atlético"
+    },
+    "success": "Mensagem enviada! Entraremos em contato em breve.",
+    "error": "Erro ao enviar mensagem. Por favor, tente novamente."
+  },
+  "footer": {
+    "description": "Transformação física e mental 100% online de qualquer lugar do mundo",
+    "quickLinks": "Links Rápidos",
+    "legal": "Legal",
+    "privacy": "Política de Privacidade",
+    "terms": "Termos e Condições",
+    "rights": "Todos os direitos reservados",
+    "followUs": "Siga-nos"
+  },
+  "common": {
+    "loading": "Carregando...",
+    "error": "Erro",
+    "retry": "Tentar Novamente",
+    "close": "Fechar",
+    "save": "Salvar",
+    "cancel": "Cancelar",
+    "delete": "Excluir",
+    "edit": "Editar",
+    "view": "Ver",
+    "back": "Voltar"
+  }
+}

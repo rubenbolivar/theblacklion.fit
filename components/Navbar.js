@@ -4,10 +4,14 @@ import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
+import LanguageSwitcher from './LanguageSwitcher';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const t = useTranslations('nav');
+  const tHero = useTranslations('hero');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,13 +23,13 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: 'Inicio', href: '#inicio' },
-    { name: 'Quiénes Somos', href: '#quienes-somos' },
-    { name: 'Servicios', href: '#servicios' },
-    { name: 'Planes', href: '#planes' },
-    { name: 'Transformaciones', href: '#transformaciones' },
-    { name: 'Galería', href: '#galeria' },
-    { name: 'Contacto', href: '#contacto' },
+    { name: t('home'), href: '#inicio' },
+    { name: t('about'), href: '#quienes-somos' },
+    { name: t('services'), href: '#servicios' },
+    { name: t('plans'), href: '#planes' },
+    { name: t('transformations'), href: '#transformaciones' },
+    { name: t('gallery'), href: '#galeria' },
+    { name: t('contact'), href: '#contacto' },
   ];
 
   const scrollToSection = (href) => {
@@ -70,7 +74,7 @@ export default function Navbar() {
             </div>
 
             {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center space-x-8">
+            <div className="hidden lg:flex items-center space-x-6">
               {navLinks.map((link) => (
                 <button
                   key={link.name}
@@ -80,20 +84,24 @@ export default function Navbar() {
                   {link.name}
                 </button>
               ))}
+              <LanguageSwitcher />
             </div>
 
-            {/* Mobile Menu Button */}
-            <button
-              className="lg:hidden text-lion-gold"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              aria-label="Toggle menu"
-            >
-              {isMobileMenuOpen ? (
-                <X className="w-6 h-6" />
-              ) : (
-                <Menu className="w-6 h-6" />
-              )}
-            </button>
+            {/* Mobile: Language Switcher + Menu Button */}
+            <div className="lg:hidden flex items-center space-x-3">
+              <LanguageSwitcher />
+              <button
+                className="text-lion-gold"
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                aria-label="Toggle menu"
+              >
+                {isMobileMenuOpen ? (
+                  <X className="w-6 h-6" />
+                ) : (
+                  <Menu className="w-6 h-6" />
+                )}
+              </button>
+            </div>
           </div>
         </div>
       </nav>
@@ -139,7 +147,7 @@ export default function Navbar() {
                 onClick={() => scrollToSection('#contacto')}
                 className="btn-gold mt-8"
               >
-                Comienza Ahora
+                {tHero('ctaStartNow')}
               </motion.button>
             </div>
           </motion.div>
