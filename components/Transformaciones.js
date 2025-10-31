@@ -16,15 +16,28 @@ export default function Transformaciones() {
   const [transformaciones, setTransformaciones] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedCategoria, setSelectedCategoria] = useState('todos');
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   useEffect(() => {
     // Fetch transformaciones desde la API
     fetch('/api/transformaciones')
       .then(res => res.json())
-      .then(data => setTransformaciones(data))
+      .then(data => {
+        // Seleccionar el campo correcto según el idioma
+        const transformacionesConIdioma = data.map(transformacion => {
+          const testimonial = language === 'en' ? (transformacion.testimonial_en || transformacion.testimonial) :
+                             language === 'pt' ? (transformacion.testimonial_pt || transformacion.testimonial) :
+                             transformacion.testimonial;
+
+          return {
+            ...transformacion,
+            testimonial
+          };
+        });
+        setTransformaciones(transformacionesConIdioma);
+      })
       .catch(err => console.error('Error fetching transformaciones:', err));
-  }, []);
+  }, [language]);
 
   const categorias = [
     { value: 'todos', label: t('transformations.categories.all') },

@@ -21,6 +21,15 @@ model Plan {
   activo              Boolean  @default(true)
   terminosCondiciones String?
   orden               Int      @default(0)
+  // Multilingual fields
+  nombre_en              String?
+  nombre_pt              String?
+  descripcion_en         String?
+  descripcion_pt         String?
+  caracteristicas_en     String?  // JSON string - Array de strings
+  caracteristicas_pt     String?  // JSON string - Array de strings
+  terminosCondiciones_en String?
+  terminosCondiciones_pt String?
   createdAt           DateTime @default(now())
   updatedAt           DateTime @updatedAt
 }
@@ -36,6 +45,9 @@ model Transformacion {
   testimonial          String
   visible              Boolean  @default(true)
   orden                Int      @default(0)
+  // Multilingual fields
+  testimonial_en       String?
+  testimonial_pt       String?
   createdAt            DateTime @default(now())
   updatedAt            DateTime @updatedAt
 }

@@ -11,24 +11,46 @@ export default function Planes() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [planes, setPlanes] = useState([]);
   const [expandedTerms, setExpandedTerms] = useState({});
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   useEffect(() => {
     // Fetch planes desde la API
     fetch('/api/planes')
       .then(res => res.json())
       .then(data => {
-        // Parsear las características de JSON string a array
-        const planesConCaracteristicas = data.map(plan => ({
-          ...plan,
-          caracteristicas: typeof plan.caracteristicas === 'string'
-            ? JSON.parse(plan.caracteristicas)
-            : plan.caracteristicas
-        }));
+        // Parsear las características de JSON string a array y seleccionar el idioma correcto
+        const planesConCaracteristicas = data.map(plan => {
+          // Seleccionar el campo correcto según el idioma
+          const nombre = language === 'en' ? (plan.nombre_en || plan.nombre) :
+                        language === 'pt' ? (plan.nombre_pt || plan.nombre) :
+                        plan.nombre;
+
+          const descripcion = language === 'en' ? (plan.descripcion_en || plan.descripcion) :
+                             language === 'pt' ? (plan.descripcion_pt || plan.descripcion) :
+                             plan.descripcion;
+
+          const caracteristicasField = language === 'en' ? (plan.caracteristicas_en || plan.caracteristicas) :
+                                      language === 'pt' ? (plan.caracteristicas_pt || plan.caracteristicas) :
+                                      plan.caracteristicas;
+
+          const terminosCondiciones = language === 'en' ? (plan.terminosCondiciones_en || plan.terminosCondiciones) :
+                                     language === 'pt' ? (plan.terminosCondiciones_pt || plan.terminosCondiciones) :
+                                     plan.terminosCondiciones;
+
+          return {
+            ...plan,
+            nombre,
+            descripcion,
+            terminosCondiciones,
+            caracteristicas: typeof caracteristicasField === 'string'
+              ? JSON.parse(caracteristicasField)
+              : caracteristicasField
+          };
+        });
         setPlanes(planesConCaracteristicas);
       })
       .catch(err => console.error('Error fetching planes:', err));
-  }, []);
+  }, [language]);
 
   const toggleTerms = (planId) => {
     setExpandedTerms(prev => ({
