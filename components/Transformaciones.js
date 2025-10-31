@@ -3,11 +3,12 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef, useState, useEffect } from 'react';
-import { 
-  ReactCompareSlider, 
-  ReactCompareSliderImage 
+import {
+  ReactCompareSlider,
+  ReactCompareSliderImage
 } from 'react-compare-slider';
 import { ChevronLeft, ChevronRight, Filter } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function Transformaciones() {
   const ref = useRef(null);
@@ -15,6 +16,7 @@ export default function Transformaciones() {
   const [transformaciones, setTransformaciones] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedCategoria, setSelectedCategoria] = useState('todos');
+  const { t } = useLanguage();
 
   useEffect(() => {
     // Fetch transformaciones desde la API
@@ -25,10 +27,10 @@ export default function Transformaciones() {
   }, []);
 
   const categorias = [
-    { value: 'todos', label: 'Todos' },
-    { value: 'perdida_peso', label: 'Pérdida de Peso' },
-    { value: 'ganancia_muscular', label: 'Ganancia Muscular' },
-    { value: 'recomposicion', label: 'Recomposición' },
+    { value: 'todos', label: t('transformations.categories.all') },
+    { value: 'perdida_peso', label: t('transformations.categories.weight_loss') },
+    { value: 'ganancia_muscular', label: t('transformations.categories.muscle_gain') },
+    { value: 'recomposicion', label: t('transformations.categories.recomposition') },
   ];
 
   const transformacionesFiltradas = selectedCategoria === 'todos'
@@ -60,9 +62,9 @@ export default function Transformaciones() {
             transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <h2 className="section-title">TRANSFORMACIONES REALES</h2>
+            <h2 className="section-title">{t('transformations.title')}</h2>
             <p className="section-subtitle">
-              Resultados comprobados de nuestros clientes
+              {t('transformations.subtitle')}
             </p>
             
             <div className="max-w-2xl mx-auto bg-lion-gray border border-lion-gold rounded-lg p-12 mt-12">
@@ -88,9 +90,9 @@ export default function Transformaciones() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="section-title">TRANSFORMACIONES REALES</h2>
+          <h2 className="section-title">{t('transformations.title')}</h2>
           <p className="section-subtitle">
-            Resultados comprobados de nuestros clientes
+            {t('transformations.subtitle')}
           </p>
         </motion.div>
 
@@ -154,10 +156,10 @@ export default function Transformaciones() {
               
               {/* Labels Antes/Después */}
               <div className="absolute top-4 left-4 bg-lion-black bg-opacity-75 px-4 py-2 rounded-lg">
-                <span className="text-lion-gold font-bold">ANTES</span>
+                <span className="text-lion-gold font-bold">{t('transformations.before').toUpperCase()}</span>
               </div>
               <div className="absolute top-4 right-4 bg-lion-black bg-opacity-75 px-4 py-2 rounded-lg">
-                <span className="text-lion-gold font-bold">DESPUÉS</span>
+                <span className="text-lion-gold font-bold">{t('transformations.after').toUpperCase()}</span>
               </div>
             </div>
 

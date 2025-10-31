@@ -1,6 +1,7 @@
 import { Inter, Montserrat } from 'next/font/google';
 import './globals.css';
 import { Providers } from './providers';
+import { LanguageProvider } from '@/contexts/LanguageContext';
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -77,7 +78,11 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
       <body className="antialiased">
-        <Providers>{children}</Providers>
+        <Providers>
+          <LanguageProvider>
+            {children}
+          </LanguageProvider>
+        </Providers>
       </body>
     </html>
   );

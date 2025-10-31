@@ -5,12 +5,14 @@ import { useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Send, CheckCircle, AlertCircle, MessageCircle, Mail, MapPin } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function Contacto() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
+  const { t } = useLanguage();
 
   const {
     register,
@@ -72,11 +74,10 @@ ${data.mensaje}`;
   };
 
   const objetivos = [
-    'Pérdida de peso',
-    'Ganancia muscular',
-    'Recomposición corporal',
-    'Rendimiento deportivo',
-    'Otro'
+    { value: 'weight_loss', label: t('contact.objectives.weight_loss') },
+    { value: 'muscle_gain', label: t('contact.objectives.muscle_gain') },
+    { value: 'recomposition', label: t('contact.objectives.recomposition') },
+    { value: 'performance', label: t('contact.objectives.performance') }
   ];
 
   return (
@@ -88,9 +89,9 @@ ${data.mensaje}`;
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="section-title">COMIENZA TU TRANSFORMACIÓN</h2>
+          <h2 className="section-title">{t('contact.title')}</h2>
           <p className="section-subtitle">
-            Da el primer paso hacia tu mejor versión
+            {t('contact.subtitle')}
           </p>
         </motion.div>
 
@@ -105,13 +106,13 @@ ${data.mensaje}`;
               {/* Nombre */}
               <div>
                 <label htmlFor="nombre" className="form-label">
-                  Nombre Completo *
+                  {t('contact.form.name')} *
                 </label>
                 <input
                   id="nombre"
                   type="text"
                   className={`form-input ${errors.nombre ? 'border-red-500' : ''}`}
-                  {...register('nombre', { required: 'El nombre es requerido' })}
+                  {...register('nombre', { required: t('contact.form.name') + ' es requerido' })}
                 />
                 {errors.nombre && (
                   <p className="text-red-500 text-sm mt-1">{errors.nombre.message}</p>
@@ -121,14 +122,14 @@ ${data.mensaje}`;
               {/* Email */}
               <div>
                 <label htmlFor="email" className="form-label">
-                  Email *
+                  {t('contact.form.email')} *
                 </label>
                 <input
                   id="email"
                   type="email"
                   className={`form-input ${errors.email ? 'border-red-500' : ''}`}
                   {...register('email', {
-                    required: 'El email es requerido',
+                    required: t('contact.form.email') + ' es requerido',
                     pattern: {
                       value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
                       message: 'Email inválido'
@@ -143,14 +144,14 @@ ${data.mensaje}`;
               {/* Teléfono */}
               <div>
                 <label htmlFor="telefono" className="form-label">
-                  Teléfono (WhatsApp) *
+                  {t('contact.form.phone')} *
                 </label>
                 <input
                   id="telefono"
                   type="tel"
                   placeholder="+1234567890"
                   className={`form-input ${errors.telefono ? 'border-red-500' : ''}`}
-                  {...register('telefono', { required: 'El teléfono es requerido' })}
+                  {...register('telefono', { required: t('contact.form.phone') + ' es requerido' })}
                 />
                 {errors.telefono && (
                   <p className="text-red-500 text-sm mt-1">{errors.telefono.message}</p>
@@ -161,7 +162,7 @@ ${data.mensaje}`;
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label htmlFor="pais" className="form-label">
-                    País
+                    {t('contact.form.country')}
                   </label>
                   <input
                     id="pais"
@@ -172,7 +173,7 @@ ${data.mensaje}`;
                 </div>
                 <div>
                   <label htmlFor="ciudad" className="form-label">
-                    Ciudad
+                    {t('contact.form.city')}
                   </label>
                   <input
                     id="ciudad"
@@ -186,7 +187,7 @@ ${data.mensaje}`;
               {/* Objetivo */}
               <div>
                 <label htmlFor="objetivo" className="form-label">
-                  Objetivo *
+                  {t('contact.form.objective')} *
                 </label>
                 <select
                   id="objetivo"
@@ -195,8 +196,8 @@ ${data.mensaje}`;
                 >
                   <option value="">Selecciona tu objetivo</option>
                   {objetivos.map((obj) => (
-                    <option key={obj} value={obj.toLowerCase().replace(/ /g, '_')}>
-                      {obj}
+                    <option key={obj.value} value={obj.value}>
+                      {obj.label}
                     </option>
                   ))}
                 </select>
@@ -208,14 +209,14 @@ ${data.mensaje}`;
               {/* Mensaje */}
               <div>
                 <label htmlFor="mensaje" className="form-label">
-                  Mensaje *
+                  {t('contact.form.message')} *
                 </label>
                 <textarea
                   id="mensaje"
                   rows="4"
                   className={`form-textarea ${errors.mensaje ? 'border-red-500' : ''}`}
-                  placeholder="Cuéntanos sobre tus objetivos y expectativas..."
-                  {...register('mensaje', { required: 'El mensaje es requerido' })}
+                  placeholder={t('contact.form.message')}
+                  {...register('mensaje', { required: t('contact.form.message') + ' es requerido' })}
                 />
                 {errors.mensaje && (
                   <p className="text-red-500 text-sm mt-1">{errors.mensaje.message}</p>

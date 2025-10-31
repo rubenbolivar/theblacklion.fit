@@ -4,12 +4,14 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef, useState, useEffect } from 'react';
 import { Check, Crown, ChevronDown, ChevronUp } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function Planes() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [planes, setPlanes] = useState([]);
   const [expandedTerms, setExpandedTerms] = useState({});
+  const { t } = useLanguage();
 
   useEffect(() => {
     // Fetch planes desde la API
@@ -54,9 +56,9 @@ export default function Planes() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="section-title">PLANES Y PRECIOS</h2>
+          <h2 className="section-title">{t('plans.title')}</h2>
           <p className="section-subtitle">
-            Elige el plan que mejor se adapte a tus objetivos
+            {t('plans.subtitle')}
           </p>
         </motion.div>
 
@@ -77,7 +79,7 @@ export default function Planes() {
               {plan.destacado && (
                 <div className="absolute top-0 right-0 bg-lion-gold text-lion-black px-6 py-2 font-heading font-bold text-sm uppercase tracking-wide flex items-center space-x-2">
                   <Crown className="w-4 h-4" />
-                  <span>Más Popular</span>
+                  <span>{t('plans.featured')}</span>
                 </div>
               )}
 
@@ -101,11 +103,11 @@ export default function Planes() {
                     <span className="text-gray-400">USD</span>
                   </div>
                   <p className="text-gray-500 text-sm mt-1">
-                    {plan.duracionMeses === 1 ? 'Por mes' : `Por ${plan.duracionMeses} meses`}
+                    {plan.duracionMeses === 1 ? t('plans.perMonth') : `${plan.duracionMeses} ${t('plans.months')}`}
                   </p>
                   {plan.destacado && (
                     <div className="mt-2 inline-block bg-lion-red text-white px-3 py-1 rounded-full text-sm font-bold">
-                      Ahorra $50 USD
+                      {t('plans.save')}
                     </div>
                   )}
                 </div>
@@ -129,7 +131,7 @@ export default function Planes() {
                       : 'bg-lion-gray border-2 border-lion-gold text-lion-gold hover:bg-lion-gold hover:text-lion-black'
                   }`}
                 >
-                  Elegir Plan {plan.nombre.split(' ')[0]}
+                  {t('plans.selectPlan')} {plan.nombre.split(' ')[0]}
                 </button>
 
                 {/* Términos y condiciones */}
@@ -139,7 +141,7 @@ export default function Planes() {
                       onClick={() => toggleTerms(plan.id)}
                       className="flex items-center justify-between w-full text-sm text-gray-400 hover:text-lion-gold transition-colors"
                     >
-                      <span>Términos y condiciones</span>
+                      <span>{t('plans.terms')}</span>
                       {expandedTerms[plan.id] ? (
                         <ChevronUp className="w-4 h-4" />
                       ) : (

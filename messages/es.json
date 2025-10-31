@@ -1,0 +1,174 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Quiénes Somos",
+    "services": "Servicios",
+    "plans": "Planes",
+    "transformations": "Transformaciones",
+    "gallery": "Galería",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "title": "Transformación Física y Mental",
+    "tagline": "Entrena como un león, Vive como un rey",
+    "description": "Transformación física y mental 100% online desde cualquier lugar del mundo",
+    "ctaStart": "Comienza Tu Transformación",
+    "ctaMeet": "Conoce a Luis Rondón",
+    "ctaStartNow": "Comienza Ahora",
+    "stats": {
+      "transformations": "Transformaciones",
+      "countries": "Países",
+      "online": "Online"
+    }
+  },
+  "about": {
+    "title": "¿QUIÉNES SOMOS?",
+    "subtitle": "Tu Coach de Transformación",
+    "name": "Luis Rondón",
+    "yearsExperience": "Años de experiencia",
+    "movementHeading": "Un movimiento de",
+    "movementHeadingSpan": "transformación",
+    "intro": "Black Lion Empire, creado por Luis Rondón, Entrenador personal, nutricionista y exfutbolista profesional, es un movimiento de transformación física y mental.",
+    "description": "Creamos programas de entrenamiento y alimentación personalizados, 100% online, para ayudarte a construir tu mejor versión desde cualquier lugar del mundo.",
+    "trajectoryTitle": "Mi Trayectoria",
+    "trajectory": {
+      "p1": "Desde muy joven encontré mi pasión en el deporte. En 2016 comencé mi carrera como futbolista profesional, dedicando mi vida al alto rendimiento y a la disciplina que exige competir al máximo nivel. Durante esos años, no solo entrenaba para mejorar en la cancha, sino que también me interesé profundamente por el funcionamiento del cuerpo, la ciencia del entrenamiento y la nutrición deportiva.",
+      "p2": "Mientras jugaba, me dediqué a estudiar sobre fisiología, culturismo, rendimiento y alimentación. Esa curiosidad se convirtió en una vocación: entender cómo transformar el cuerpo y la mente a través del entrenamiento consciente.",
+      "p3": "Tras mi retiro del fútbol profesional en 2020, decidí seguir mi verdadera pasión: ayudar a otros a alcanzar su mejor versión. Me certifiqué como Personal Trainer y Asesor en Nutrición Deportiva, combinando mi experiencia como atleta con el conocimiento técnico y científico del fitness.",
+      "p4": "Hoy mi objetivo es guiarte a lograr un cambio real, sostenible y basado en la disciplina, el conocimiento y el compromiso contigo mismo. Mi enfoque no es solo transformar cuerpos, sino también mentalidades, creando hábitos que te lleven a vivir con más energía, confianza y equilibrio."
+    },
+    "missionTitle": "Nuestra Misión",
+    "mission": "Empoderar a personas de todo el mundo para que alcancen su máximo potencial físico y mental, construyendo no solo un cuerpo fuerte, sino una mentalidad de campeón.",
+    "values": {
+      "discipline": {
+        "title": "Disciplina",
+        "description": "Construye hábitos que transforman tu vida"
+      },
+      "energy": {
+        "title": "Energía",
+        "description": "Despierta tu máximo potencial físico"
+      },
+      "confidence": {
+        "title": "Confianza",
+        "description": "Conquista tus metas con determinación"
+      }
+    },
+    "credentials": {
+      "trainer": "Entrenador Personal Certificado",
+      "nutritionist": "Nutricionista",
+      "athlete": "Exfutbolista Profesional"
+    }
+  },
+  "services": {
+    "title": "NUESTROS SERVICIOS",
+    "subtitle": "Todo lo que necesitas para tu transformación en un solo lugar",
+    "items": {
+      "training": {
+        "title": "Plan de Entrenamiento Personalizado",
+        "description": "Programas adaptados a tu nivel y objetivo específico"
+      },
+      "nutrition": {
+        "title": "Plan Nutricional Personalizado",
+        "description": "Alimentación diseñada según tu objetivo y estilo de vida"
+      },
+      "supplements": {
+        "title": "Asesoramiento de Suplementación",
+        "description": "Guía profesional para optimizar tus resultados"
+      },
+      "tracking": {
+        "title": "Seguimiento Continuo",
+        "description": "Control bisemanal con ajustes necesarios"
+      },
+      "whatsapp": {
+        "title": "Soporte Directo WhatsApp",
+        "description": "Contacto directo con Luis Rondón"
+      },
+      "online": {
+        "title": "100% Online",
+        "description": "Entrena desde cualquier lugar del mundo"
+      }
+    },
+    "cta": {
+      "title": "¿Listo para comenzar tu transformación?",
+      "description": "Únete a cientos de personas que ya están transformando sus vidas con Black Lion Empire",
+      "button": "Ver Planes y Precios"
+    }
+  },
+  "plans": {
+    "title": "PLANES Y PRECIOS",
+    "subtitle": "Elige el plan que mejor se adapte a tus objetivos",
+    "month": "mes",
+    "months": "meses",
+    "perMonth": "Por mes",
+    "featured": "Más Popular",
+    "select": "Elegir Plan",
+    "selectPlan": "Elegir Plan",
+    "features": "Características",
+    "save": "Ahorra $50 USD",
+    "terms": "Términos y condiciones",
+    "categories": {
+      "weight_loss": "Pérdida de Peso",
+      "muscle_gain": "Ganancia Muscular",
+      "recomposition": "Recomposición"
+    }
+  },
+  "transformations": {
+    "title": "Transformaciones Reales",
+    "subtitle": "Resultados que hablan por sí mismos",
+    "before": "Antes",
+    "after": "Después",
+    "time": "Tiempo",
+    "testimonial": "Testimonial",
+    "viewAll": "Ver Todas",
+    "categories": {
+      "all": "Todas",
+      "weight_loss": "Pérdida de Peso",
+      "muscle_gain": "Ganancia Muscular",
+      "recomposition": "Recomposición"
+    }
+  },
+  "contact": {
+    "title": "Comienza Tu Transformación",
+    "subtitle": "Completa el formulario y nos pondremos en contacto contigo",
+    "form": {
+      "name": "Nombre Completo",
+      "email": "Correo Electrónico",
+      "phone": "Teléfono (WhatsApp)",
+      "country": "País",
+      "city": "Ciudad",
+      "objective": "Objetivo Principal",
+      "message": "Cuéntanos más sobre tus objetivos",
+      "submit": "Enviar Mensaje",
+      "sending": "Enviando..."
+    },
+    "objectives": {
+      "weight_loss": "Pérdida de Peso",
+      "muscle_gain": "Ganancia Muscular",
+      "recomposition": "Recomposición Corporal",
+      "performance": "Rendimiento Deportivo"
+    },
+    "success": "¡Mensaje enviado! Te contactaremos pronto.",
+    "error": "Error al enviar el mensaje. Por favor intenta de nuevo."
+  },
+  "footer": {
+    "description": "Transformación física y mental 100% online desde cualquier lugar del mundo",
+    "quickLinks": "Enlaces Rápidos",
+    "legal": "Legal",
+    "privacy": "Política de Privacidad",
+    "terms": "Términos y Condiciones",
+    "rights": "Todos los derechos reservados",
+    "followUs": "Síguenos"
+  },
+  "common": {
+    "loading": "Cargando...",
+    "error": "Error",
+    "retry": "Reintentar",
+    "close": "Cerrar",
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "delete": "Eliminar",
+    "edit": "Editar",
+    "view": "Ver",
+    "back": "Volver"
+  }
+}

@@ -4,41 +4,43 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { Dumbbell, Apple, Pill, Activity, MessageCircle, Globe } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function Servicios() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const { t } = useLanguage();
 
   const servicios = [
     {
       icon: Dumbbell,
-      title: 'Plan de Entrenamiento Personalizado',
-      description: 'Programas adaptados a tu nivel y objetivo específico'
+      title: t('services.items.training.title'),
+      description: t('services.items.training.description')
     },
     {
       icon: Apple,
-      title: 'Plan Nutricional Personalizado',
-      description: 'Alimentación diseñada según tu objetivo y estilo de vida'
+      title: t('services.items.nutrition.title'),
+      description: t('services.items.nutrition.description')
     },
     {
       icon: Pill,
-      title: 'Asesoramiento de Suplementación',
-      description: 'Guía profesional para optimizar tus resultados'
+      title: t('services.items.supplements.title'),
+      description: t('services.items.supplements.description')
     },
     {
       icon: Activity,
-      title: 'Seguimiento Continuo',
-      description: 'Control bisemanal con ajustes necesarios'
+      title: t('services.items.tracking.title'),
+      description: t('services.items.tracking.description')
     },
     {
       icon: MessageCircle,
-      title: 'Soporte Directo WhatsApp',
-      description: 'Contacto directo con Luis Rondón'
+      title: t('services.items.whatsapp.title'),
+      description: t('services.items.whatsapp.description')
     },
     {
       icon: Globe,
-      title: '100% Online',
-      description: 'Entrena desde cualquier lugar del mundo'
+      title: t('services.items.online.title'),
+      description: t('services.items.online.description')
     }
   ];
 
@@ -51,9 +53,9 @@ export default function Servicios() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="section-title">NUESTROS SERVICIOS</h2>
+          <h2 className="section-title">{t('services.title')}</h2>
           <p className="section-subtitle">
-            Todo lo que necesitas para tu transformación en un solo lugar
+            {t('services.subtitle')}
           </p>
         </motion.div>
 
@@ -96,10 +98,10 @@ export default function Servicios() {
         >
           <div className="bg-gradient-to-r from-lion-black via-lion-gray to-lion-black border border-lion-gold rounded-lg p-8 max-w-3xl mx-auto">
             <h3 className="text-2xl md:text-3xl font-heading font-bold text-lion-gold mb-4">
-              ¿Listo para comenzar tu transformación?
+              {t('services.cta.title')}
             </h3>
             <p className="text-gray-300 mb-6">
-              Únete a cientos de personas que ya están transformando sus vidas con Black Lion Empire
+              {t('services.cta.description')}
             </p>
             <button
               onClick={() => {
@@ -113,7 +115,7 @@ export default function Servicios() {
               }}
               className="btn-gold"
             >
-              Ver Planes y Precios
+              {t('services.cta.button')}
             </button>
           </div>
         </motion.div>

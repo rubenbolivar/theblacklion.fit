@@ -2,6 +2,7 @@
 
 import { Instagram } from 'lucide-react';
 import Image from 'next/image';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 // Componente SVG personalizado para TikTok
 const TikTokIcon = ({ className }) => (
@@ -17,6 +18,7 @@ const TikTokIcon = ({ className }) => (
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const { t } = useLanguage();
 
   const scrollToSection = (href) => {
     const element = document.querySelector(href);
@@ -29,12 +31,12 @@ export default function Footer() {
   };
 
   const quickLinks = [
-    { name: 'Inicio', href: '#inicio' },
-    { name: 'Quiénes Somos', href: '#quienes-somos' },
-    { name: 'Servicios', href: '#servicios' },
-    { name: 'Planes', href: '#planes' },
-    { name: 'Transformaciones', href: '#transformaciones' },
-    { name: 'Contacto', href: '#contacto' },
+    { name: t('nav.home'), href: '#inicio' },
+    { name: t('nav.about'), href: '#quienes-somos' },
+    { name: t('nav.services'), href: '#servicios' },
+    { name: t('nav.plans'), href: '#planes' },
+    { name: t('nav.transformations'), href: '#transformaciones' },
+    { name: t('nav.contact'), href: '#contacto' },
   ];
 
   const socialLinks = [
@@ -66,17 +68,17 @@ export default function Footer() {
               className="h-16 w-auto"
             />
             <p className="text-gray-400 text-sm italic">
-              &quot;Entrena como un león, Vive como un rey&quot;
+              &quot;{t('hero.tagline')}&quot;
             </p>
             <p className="text-gray-500 text-xs">
-              Transformación física y mental 100% online desde cualquier lugar del mundo.
+              {t('footer.description')}
             </p>
           </div>
 
           {/* Links rápidos */}
           <div>
             <h3 className="text-lion-gold font-heading font-bold mb-4">
-              Links Rápidos
+              {t('footer.quickLinks')}
             </h3>
             <ul className="space-y-2">
               {quickLinks.map((link) => (
@@ -125,7 +127,7 @@ export default function Footer() {
           {/* Redes sociales */}
           <div>
             <h3 className="text-lion-gold font-heading font-bold mb-4">
-              Síguenos
+              {t('footer.followUs')}
             </h3>
             <div className="flex space-x-4">
               {socialLinks.map((social) => (
@@ -154,7 +156,7 @@ export default function Footer() {
         {/* Copyright */}
         <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <p className="text-gray-500 text-sm text-center md:text-left">
-            © {currentYear} Black Lion Empire. Todos los derechos reservados.
+            © {currentYear} Black Lion Empire. {t('footer.rights')}.
           </p>
           <p className="text-gray-500 text-sm text-center md:text-right">
             Developed by{' '}

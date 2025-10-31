@@ -3,8 +3,10 @@
 import { motion } from 'framer-motion';
 import { ChevronRight, Zap } from 'lucide-react';
 import Image from 'next/image';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function Hero() {
+  const { t } = useLanguage();
   const scrollToSection = (href) => {
     const element = document.querySelector(href);
     if (element) {
@@ -84,7 +86,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-3xl md:text-5xl lg:text-6xl font-heading font-black mb-6"
         >
-          <span className="text-lion-white">Transformación Física y Mental</span>
+          <span className="text-lion-white">{t('hero.title')}</span>
         </motion.h1>
 
         <motion.div
@@ -95,7 +97,7 @@ export default function Hero() {
         >
           <Zap className="w-6 h-6 text-lion-red" />
           <p className="text-xl md:text-2xl lg:text-3xl font-heading font-bold text-lion-gold">
-            Entrena como un león, Vive como un rey
+            {t('hero.tagline')}
           </p>
           <Zap className="w-6 h-6 text-lion-red" />
         </motion.div>
@@ -106,7 +108,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="text-lg md:text-xl text-gray-300 mb-12 max-w-2xl mx-auto"
         >
-          Transformación física y mental 100% online desde cualquier lugar del mundo
+          {t('hero.description')}
         </motion.p>
 
         <motion.div
@@ -119,7 +121,7 @@ export default function Hero() {
             onClick={() => scrollToSection('#contacto')}
             className="btn-gold flex items-center space-x-2 group"
           >
-            <span>Comienza Tu Transformación</span>
+            <span>{t('hero.ctaStart')}</span>
             <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </button>
 
@@ -127,7 +129,7 @@ export default function Hero() {
             onClick={() => scrollToSection('#quienes-somos')}
             className="btn-outline-gold"
           >
-            Conoce a Luis Rondón
+            {t('hero.ctaMeet')}
           </button>
         </motion.div>
 
@@ -143,7 +145,7 @@ export default function Hero() {
               500+
             </div>
             <div className="text-gray-400 uppercase tracking-wide text-sm">
-              Transformaciones
+              {t('hero.stats.transformations')}
             </div>
           </div>
 
@@ -152,7 +154,7 @@ export default function Hero() {
               50+
             </div>
             <div className="text-gray-400 uppercase tracking-wide text-sm">
-              Países
+              {t('hero.stats.countries')}
             </div>
           </div>
 
@@ -161,7 +163,7 @@ export default function Hero() {
               100%
             </div>
             <div className="text-gray-400 uppercase tracking-wide text-sm">
-              Online
+              {t('hero.stats.online')}
             </div>
           </div>
         </motion.div>
